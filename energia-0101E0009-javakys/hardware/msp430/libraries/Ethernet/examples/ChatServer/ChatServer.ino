@@ -25,7 +25,7 @@
 // gateway and subnet are optional:
 byte mac[] = { 
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192,168,1, 177);
+IPAddress ip(192,168,1, 192);
 IPAddress gateway(192,168,1, 1);
 IPAddress subnet(255, 255, 0, 0);
 
@@ -59,7 +59,7 @@ void loop() {
     if (!alreadyConnected) {
       // clead out the input buffer:
       client.flush();    
-      Serial.println("We have a new client");
+//      Serial.println("We have a new client");
       client.println("Hello, client!"); 
       alreadyConnected = true;
     } 
@@ -70,7 +70,7 @@ void loop() {
       // echo the bytes back to the client:
       server.write(thisChar);
       // echo the bytes to the server as well:
-      Serial.write(thisChar);
+//      Serial.write(thisChar);
     }
   }
 }
